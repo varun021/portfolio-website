@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home - Varun Nair</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: {"50":"#eff6ff","100":"#dbeafe","200":"#bfdbfe","300":"#93c5fd","400":"#60a5fa","500":"#3b82f6","600":"#2563eb","700":"#1d4ed8","800":"#1e40af","900":"#1e3a8a","950":"#172554"}
+          }
+        },
+        fontFamily: {
+          'body': [
+            'Inter', 
+            'ui-sans-serif', 
+            'system-ui', 
+            '-apple-system', 
+            'system-ui', 
+            'Segoe UI', 
+            'Roboto', 
+            'Helvetica Neue', 
+            'Arial', 
+            'Noto Sans', 
+            'sans-serif', 
+            'Apple Color Emoji', 
+            'Segoe UI Emoji', 
+            'Segoe UI Symbol', 
+            'Noto Color Emoji'
+          ],
+          'sans': [
+            'Inter', 
+            'ui-sans-serif', 
+            'system-ui', 
+            '-apple-system', 
+            'system-ui', 
+            'Segoe UI', 
+            'Roboto', 
+            'Helvetica Neue', 
+            'Arial', 
+            'Noto Sans', 
+            'sans-serif', 
+            'Apple Color Emoji', 
+            'Segoe UI Emoji', 
+            'Segoe UI Symbol', 
+            'Noto Color Emoji'
+          ]
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Prevent right-click context menu */
+    body {
+      -webkit-user-select: none; /* Safari */
+      -moz-user-select: none; /* Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+      user-select: none; /* Non-prefixed version, currently supported by Chrome, Opera, and Edge */
+    }
+
+    /* Prevent image dragging */
+    img {
+      -webkit-user-drag: none; /* Safari */
+      user-drag: none; /* Non-prefixed version, supported by Chrome, Opera, and Edge */
+    }
+
+    /* Transparent overlay for images */
+    .image-container {
+      position: relative;
+      display: inline-block;
+    }
+
+    .image-container img {
+      display: block;
+    }
+
+    .image-container::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0); /* Transparent overlay */
+      pointer-events: none; /* Allows clicks to pass through */
+    }
+  </style>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300 ease-in-out">
+  <div class="flex flex-col md:flex-row p-4 md:p-6">
+    <!-- Sidebar -->
+    <div class="w-full md:w-1/4 mb-6 md:mb-0">
+      <div class="bg-white dark:bg-gray-800 rounded-xl shadow-xl p-6 md:sticky md:top-6">
+        <div class="flex flex-col items-center">
+          <div class="image-container">
+            <img src="/images/pic.jpg" alt="Profile Picture" class="w-32 h-32 rounded-full mb-4 shadow-md hover:shadow-xl transition-shadow duration-300">
+          </div>
+          <h2 class="text-3xl font-bold mb-2 dark:text-white">Varun Nair</h2>
+          <p class="text-gray-600 dark:text-gray-400 text-center mb-4 italic">Passionate Developer & Tech Enthusiast</p>
+        </div>
+        
+        <!-- Contact Info -->
+        <div class="mt-6">
+          <p class="text-gray-600 dark:text-gray-400 text-center">
+            <strong>Address:</strong><br>
+            Sukhwani Niketan, Waghere Colony-4, <br>
+            Pimpri Gaon, Pune- 411017
+          </p>
+          
+          <p class="mt-4 text-gray-600 dark:text-gray-400 text-center">
+            <strong>Phone:</strong> <a href="tel:+917558581233" class="text-blue-500 hover:underline">(+91) 7558581233</a>
+          </p>
+          
+          <p class="mt-4 text-gray-600 dark:text-gray-400 text-center">
+            <strong>Email:</strong> <a href="mailto:varunnair019@gmail.com" class="text-blue-500 hover:underline">varunnair019@gmail.com</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="w-full md:w-3/4 md:pl-8">
+      <!-- Navbar -->
+      <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg mb-8 sticky top-4 z-10">
+        <div class="flex justify-between items-center py-4 px-6">
+          <div class="flex space-x-4">
+            <a href="/index.html" class="text-lg font-semibold text-blue-500 hover:text-blue-600 transition-colors duration-300">Home</a>
+            <a href="/projects.html" class="text-lg text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors duration-300">Projects</a>
+            <a href="/about.html" class="text-lg text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors duration-300">About</a>
+          </div>
+          <button id="themeToggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+            <svg class="w-6 h-6 text-gray-800 dark:text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <main class="bg-white dark:bg-gray-800 rounded-xl shadow-xl p-8">
+        <h1 class="text-4xl font-bold mb-6 text-center text-blue-600 dark:text-blue-400">Welcome to My Portfolio</h1>
+        <div class="text-gray-700 dark:text-gray-300 space-y-6">
+          <p class="text-lg leading-relaxed">
+            Hello! I'm Varun Nair, a passionate developer and tech enthusiast. This is my personal portfolio website where you can learn more about me, my skills, and the projects I've worked on.
+          </p>
+          <p class="text-lg leading-relaxed">
+            I'm currently pursuing my Master's in Computer Applications and have a strong background in web development, mobile app development, and database management.
+          </p>
+          <div class="bg-gray-50 dark:bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+            <h2 class="text-2xl font-bold mb-4 text-blue-600 dark:text-blue-400">What You'll Find Here</h2>
+            <ul class="list-disc list-inside space-y-2">
+              <li>An overview of my technical skills and expertise</li>
+              <li>Detailed information about my educational background</li>
+              <li>A showcase of my recent projects and achievements</li>
+              <li>Ways to get in touch with me for potential opportunities</li>
+            </ul>
+          </div>
+          <p class="text-lg leading-relaxed">
+            Feel free to explore the different sections of my portfolio. If you have any questions or would like to discuss potential collaborations, don't hesitate to reach out!
+          </p>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script>
+    const themeToggle = document.getElementById('themeToggle');
+    const htmlElement = document.documentElement;
+
+    themeToggle.addEventListener('click', () => {
+      htmlElement.classList.toggle('dark');
+    });
+
+    // Check for saved theme preference or use system preference
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      htmlElement.classList.add('dark');
+    } else {
+      htmlElement.classList.remove('dark');
+    }
+
+    // Save theme preference when changed
+    themeToggle.addEventListener('click', () => {
+      if (htmlElement.classList.contains('dark')) {
+        localStorage.theme = 'dark';
+      } else {
+        localStorage.theme = 'light';
+      }
+    });
+
+    // Disable right-click context menu
+    document.addEventListener('contextmenu', event => event.preventDefault());
+  </script>
+</body>
+</html>
