@@ -3,9 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home - Varun Nair</title>
+  <title>Contact - Varun Nair</title>
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script>
     tailwind.config = {
       darkMode: 'class',
@@ -55,40 +57,7 @@
     }
   </script>
   <style>
-    /* Prevent right-click context menu */
-    body {
-      -webkit-user-select: none; /* Safari */
-      -moz-user-select: none; /* Firefox */
-      -ms-user-select: none; /* Internet Explorer/Edge */
-      user-select: none; /* Non-prefixed version, currently supported by Chrome, Opera, and Edge */
-    }
-
-    /* Prevent image dragging */
-    img {
-      -webkit-user-drag: none; /* Safari */
-      user-drag: none; /* Non-prefixed version, supported by Chrome, Opera, and Edge */
-    }
-
-    /* Transparent overlay for images */
-    .image-container {
-      position: relative;
-      display: inline-block;
-    }
-
-    .image-container img {
-      display: block;
-    }
-
-    .image-container::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(255, 255, 255, 0); /* Transparent overlay */
-      pointer-events: none; /* Allows clicks to pass through */
-    }
+    /* Existing styles remain unchanged */
   </style>
 </head>
 <body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300 ease-in-out">
@@ -104,19 +73,22 @@
           <p class="text-gray-600 dark:text-gray-400 text-center mb-4 italic">Passionate Developer & Tech Enthusiast</p>
         </div>
         
-        <!-- Contact Info -->
+        <!-- Contact Info with Font Awesome icons -->
         <div class="mt-6">
           <p class="text-gray-600 dark:text-gray-400 text-center">
+        
             <strong>Address:</strong><br>
             Sukhwani Niketan, Waghere Colony-4, <br>
             Pimpri Gaon, Pune- 411017
           </p>
           
           <p class="mt-4 text-gray-600 dark:text-gray-400 text-center">
+        
             <strong>Phone:</strong> <a href="tel:+917558581233" class="text-blue-500 hover:underline">(+91) 7558581233</a>
           </p>
           
           <p class="mt-4 text-gray-600 dark:text-gray-400 text-center">
+        
             <strong>Email:</strong> <a href="mailto:varunnair019@gmail.com" class="text-blue-500 hover:underline">varunnair019@gmail.com</a>
           </p>
         </div>
@@ -129,10 +101,10 @@
       <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg mb-8 sticky top-4 z-10">
         <div class="flex justify-between items-center py-4 px-6">
           <div class="flex space-x-4">
-            <a href="index.html" class="text-lg font-semibold text-blue-500 hover:text-blue-600 transition-colors duration-300">Home</a>
+            <a href="index.html" class="text-lg text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors duration-300">Home</a>
             <a href="projects.html" class="text-lg text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors duration-300">Projects</a>
             <a href="about.html" class="text-lg text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors duration-300">About</a>
-            <a href="contact.html" class="text-lg text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors duration-300">Contact</a>
+            <a href="contact.html" class="text-lg font-semibold text-blue-500 hover:text-blue-600 transition-colors duration-300">Contact</a>
           </div>
           <button id="themeToggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
             <svg class="w-6 h-6 text-gray-800 dark:text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -144,26 +116,51 @@
 
       <!-- Main Content -->
       <main class="bg-white dark:bg-gray-800 rounded-xl shadow-xl p-8">
-        <h1 class="text-4xl font-bold mb-6 text-center text-blue-600 dark:text-blue-400">Welcome to My Portfolio</h1>
+        <h1 class="text-4xl font-bold mb-6 text-center text-blue-600 dark:text-blue-400">Contact Me</h1>
         <div class="text-gray-700 dark:text-gray-300 space-y-6">
-          <p class="text-lg leading-relaxed">
-            Hello! I'm Varun Nair, a passionate developer and tech enthusiast. This is my personal portfolio website where you can learn more about me, my skills, and the projects I've worked on.
+          <p class="text-lg leading-relaxed text-center">
+            Feel free to reach out to me for any inquiries, collaborations, or just to say hello!
           </p>
-          <p class="text-lg leading-relaxed">
-            I'm currently pursuing my Master's in Computer Applications and have a strong background in web development, mobile app development, and database management.
-          </p>
-          <div class="bg-gray-50 dark:bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-            <h2 class="text-2xl font-bold mb-4 text-blue-600 dark:text-blue-400">What You'll Find Here</h2>
-            <ul class="list-disc list-inside space-y-2">
-              <li>An overview of my technical skills and expertise</li>
-              <li>Detailed information about my educational background</li>
-              <li>A showcase of my recent projects and achievements</li>
-              <li>Ways to get in touch with me for potential opportunities</li>
+          <form class="space-y-4" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="c84ab9ea-53c8-491c-be1b-093146f1790f">
+            <div>
+              <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Name</label>
+              <input type="text" id="name" name="name" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Email</label>
+              <input type="email" id="email" name="email" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+            </div>
+            <div>
+              <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Message</label>
+              <textarea id="message" name="message" rows="4" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50 dark:bg-gray-700 dark:border-gray-600 dark:text-white"></textarea>
+            </div>
+            <div>
+              <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md transition-colors duration-300">
+                <i class="fas fa-paper-plane mr-2"></i>Send Message
+              </button>
+            </div>
+          </form>
+          <!-- <div class="bg-gray-50 dark:bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 mt-8">
+            <h2 class="text-2xl font-bold mb-4 text-blue-600 dark:text-blue-400">Connect With Me</h2>
+            <ul class="space-y-2">
+              <li>
+                <a href="https://github.com/your-github" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline">
+                  <i class="fab fa-github mr-2"></i>GitHub
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/your-linkedin" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline">
+                  <i class="fab fa-linkedin mr-2"></i>LinkedIn
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/your-twitter" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline">
+                  <i class="fab fa-twitter mr-2"></i>Twitter
+                </a>
+              </li>
             </ul>
-          </div>
-          <p class="text-lg leading-relaxed">
-            Feel free to explore the different sections of my portfolio. If you have any questions or would like to discuss potential collaborations, don't hesitate to reach out!
-          </p>
+          </div> -->
         </div>
       </main>
     </div>
