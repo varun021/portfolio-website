@@ -57,16 +57,16 @@
   <style>
     /* Prevent right-click context menu */
     body {
-      -webkit-user-select: none; /* Safari */
-      -moz-user-select: none; /* Firefox */
-      -ms-user-select: none; /* Internet Explorer/Edge */
-      user-select: none; /* Non-prefixed version, currently supported by Chrome, Opera, and Edge */
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
     }
 
     /* Prevent image dragging */
     img {
-      -webkit-user-drag: none; /* Safari */
-      user-drag: none; /* Non-prefixed version, supported by Chrome, Opera, and Edge */
+      -webkit-user-drag: none;
+      user-drag: none;
     }
 
     /* Transparent overlay for images */
@@ -86,8 +86,8 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(255, 255, 255, 0); /* Transparent overlay */
-      pointer-events: none; /* Allows clicks to pass through */
+      background: rgba(255, 255, 255, 0);
+      pointer-events: none;
     }
   </style>
 </head>
@@ -126,21 +126,40 @@
     <!-- Main Content Area -->
     <div class="w-full md:w-3/4 md:pl-8">
       <!-- Navbar -->
-      <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg mb-8 sticky top-4 z-10">
-        <div class="flex justify-between items-center py-4 px-6">
-          <div class="flex space-x-4">
-            <a href="index.html" class="text-lg font-semibold text-blue-500 hover:text-blue-600 transition-colors duration-300">Home</a>
-            <a href="projects.html" class="text-lg text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors duration-300">Projects</a>
-            <a href="about.html" class="text-lg text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors duration-300">About</a>
-            <a href="contact.html" class="text-lg text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors duration-300">Contact</a>
-          </div>
-          <button id="themeToggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-            <svg class="w-6 h-6 text-gray-800 dark:text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
-            </svg>
-          </button>
-        </div>
-      </div>
+<div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg mb-8 sticky top-4 z-10">
+  <div class="flex justify-between items-center py-4 px-6">
+    <div class="flex space-x-4">
+      <a href="index.html" class="text-lg font-semibold text-blue-500 hover:text-blue-600 transition-colors duration-300">Home</a>
+      <a href="projects.html" class="text-lg hidden md:inline text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors duration-300">Projects</a>
+      <a href="about.html" class="text-lg hidden md:inline text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors duration-300">About</a>
+      <a href="contact.html" class="text-lg hidden md:inline text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors duration-300">Contact</a>
+    </div>
+
+    <!-- Mobile Hamburger Icon -->
+    <div class="md:hidden flex items-center">
+      <button id="mobileMenuButton" class="text-gray-800 dark:text-gray-200 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Theme Toggle Button -->
+    <button id="themeToggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+      <svg class="w-6 h-6 text-gray-800 dark:text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Menu (hidden by default) -->
+  <div id="mobileMenu" class="hidden md:hidden bg-white dark:bg-gray-800">
+    <a href="projects.html" class="block px-4 py-2 text-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Projects</a>
+    <a href="about.html" class="block px-4 py-2 text-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">About</a>
+    <a href="contact.html" class="block px-4 py-2 text-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Contact</a>
+  </div>
+</div>
+
 
       <!-- Main Content -->
       <main class="bg-white dark:bg-gray-800 rounded-xl shadow-xl p-8">
@@ -169,31 +188,31 @@
     </div>
   </div>
   <script>
-    const themeToggle = document.getElementById('themeToggle');
-    const htmlElement = document.documentElement;
+    // Theme Toggle Functionality
+const themeToggle = document.getElementById('themeToggle');
+const htmlElement = document.documentElement;
+const savedTheme = localStorage.getItem('theme');
 
-    themeToggle.addEventListener('click', () => {
-      htmlElement.classList.toggle('dark');
-    });
+if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+  htmlElement.classList.add('dark');
+}
 
-    // Check for saved theme preference or use system preference
-    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      htmlElement.classList.add('dark');
-    } else {
-      htmlElement.classList.remove('dark');
-    }
+themeToggle.addEventListener('click', () => {
+  const isDark = htmlElement.classList.toggle('dark');
+  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+});
 
-    // Save theme preference when changed
-    themeToggle.addEventListener('click', () => {
-      if (htmlElement.classList.contains('dark')) {
-        localStorage.theme = 'dark';
-      } else {
-        localStorage.theme = 'light';
-      }
-    });
+// Mobile Menu Toggle Functionality
+const mobileMenuButton = document.getElementById('mobileMenuButton');
+const mobileMenu = document.getElementById('mobileMenu');
 
-    // Disable right-click context menu
-    document.addEventListener('contextmenu', event => event.preventDefault());
+mobileMenuButton.addEventListener('click', () => {
+  mobileMenu.classList.toggle('hidden');
+});
+
+// Disable right-click menu
+document.addEventListener('contextmenu', (event) => event.preventDefault());
+
   </script>
 </body>
 </html>
