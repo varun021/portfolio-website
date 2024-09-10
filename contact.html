@@ -132,7 +132,7 @@
           </div>
         </div>
 
-      <!-- Main Content -->
+     <!-- Main Content -->
       <main class="bg-white dark:bg-gray-800 rounded-xl shadow-xl p-8">
         <h1 class="text-4xl font-bold mb-6 text-center text-blue-600 dark:text-blue-400">Contact Me</h1>
         <div class="text-gray-700 dark:text-gray-300 space-y-6">
@@ -140,24 +140,20 @@
             Feel free to reach out to me for any inquiries, collaborations, or just to say hello!
           </p>
           <form class="space-y-4" action="https://api.web3forms.com/submit" method="POST">
-            <input type="hidden" name="access_key" value="c84ab9ea-53c8-491c-be1b-093146f1790f">
-            <div>
-              <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Name</label>
-              <input type="text" id="name" name="name" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+            <input type="hidden" name="access_key" value="c84ab9ea-53c8-491c-be1b-093146f1790f" />
+            <div class="flex flex-col">
+              <label for="name" class="text-lg mb-1 dark:text-gray-200">Your Name</label>
+              <input type="text" id="name" name="name" class="border border-gray-300 rounded-lg p-2 dark:bg-gray-900 dark:border-gray-700 dark:text-gray-200" required>
             </div>
-            <div>
-              <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Email</label>
-              <input type="email" id="email" name="email" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+            <div class="flex flex-col">
+              <label for="email" class="text-lg mb-1 dark:text-gray-200">Your Email</label>
+              <input type="email" id="email" name="email" class="border border-gray-300 rounded-lg p-2 dark:bg-gray-900 dark:border-gray-700 dark:text-gray-200" required>
             </div>
-            <div>
-              <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Message</label>
-              <textarea id="message" name="message" rows="4" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50 dark:bg-gray-700 dark:border-gray-600 dark:text-white"></textarea>
+            <div class="flex flex-col">
+              <label for="message" class="text-lg mb-1 dark:text-gray-200">Your Message</label>
+              <textarea id="message" name="message" class="border border-gray-300 rounded-lg p-2 dark:bg-gray-900 dark:border-gray-700 dark:text-gray-200" rows="5" required></textarea>
             </div>
-            <div>
-              <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md transition-colors duration-300">
-                <i class="fas fa-paper-plane mr-2"></i>Send Message
-              </button>
-            </div>
+            <button type="submit" class="w-full bg-blue-600 text-white rounded-lg p-2 text-lg font-semibold hover:bg-blue-500 transition-colors duration-300">Send Message</button>
           </form>
         </div>
       </main>
